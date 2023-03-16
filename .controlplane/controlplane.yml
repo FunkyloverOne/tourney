@@ -1,0 +1,25 @@
+aliases:
+  common: &common
+    # Org name for staging. Production apps will use a different org for security.
+    cpln_org: demo-nazar-matus
+    # Example apps use only one location. CPLN offers the ability to use multiple locations.
+    default_location: aws-us-east-2
+    # Like the entries in the Heroku Procfile that get deployed when the application code changes
+    # and the application image updates.
+    app_workloads:
+      - rails
+    # Like Heroku add-ons
+    additional_workloads:
+      - postgres
+    # Configure the workload name used as a template for one-off scripts, like a Heroku one-off dyno.
+    one_off_workload: rails
+
+apps:
+  tourney:
+    <<: *common
+  # # QA Apps are like Heroku review apps, but they use `prefix` so you can run a commmand like
+  # # this to create a QA app for the tutorial app.
+  # # `cpl setup gvc postgres redis rails -a qa-tutorial-app-pr-1234`
+  # qa-tourney:
+  #   <<: *common
+  #   prefix: true
