@@ -2,6 +2,8 @@
 
 ## Control Plane deployment
 
+Currently hosted here: https://rails-fcynxqgn20mat.cpln.app/
+
 Relies on `cpl` gem from here:
 https://github.com/shakacode/heroku-to-control-plane
 
