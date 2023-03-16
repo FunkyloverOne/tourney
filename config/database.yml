@@ -20,6 +20,10 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("TOURNEY_DB_HOST") { "127.0.0.1" } %>
+  port: <%= ENV.fetch("TOURNEY_DB_PORT") { "5432" } %>
+  username: <%= ENV.fetch("TOURNEY_DB_USER") { "tourney" } %>
+  password: <%= ENV.fetch("TOURNEY_DB_PASSWORD") { "tourney" } %>
 
 development:
   <<: *default
@@ -82,5 +86,3 @@ test:
 production:
   <<: *default
   database: tourney_production
-  username: tourney
-  password: <%= ENV["TOURNEY_DATABASE_PASSWORD"] %>
